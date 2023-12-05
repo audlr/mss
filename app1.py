@@ -37,15 +37,14 @@ if st.session_state.page_number == 2:
     Hello_choice = st.empty()
     Hello_choice.subheader(f"{user_name} 님과 맞는 식당을 찾기 위해, 마음에 드는 곳을 골라주세요.")
 
-    select_restaurants = task1.df['name'].sample(10, random_state=42)  # 더미
+    select_restaurants = ['Banashankari Donne Biriyani', 'Freshmenu', 'Corner House Ice Cream', 'Petoo', 'Shree Cool Point', 'Dal Tadkaa', "Bunt'S Biriyani Palace", 'Thamboola', 'Foodiction', 'Food Springs']
+
 
     container1= st.empty()
     with container1.expander(f"Choice", expanded=True):
         selected_restaurant_name = st.selectbox("레스토랑을 선택하세요", select_restaurants)
 
-        selected_restaurant = task1.df[task1.df['name'] == selected_restaurant_name]
-        st.write(f"선택한 식당: {selected_restaurant['name'].values[0]}")
-        st.write(f"리뷰: {selected_restaurant['reviews_list'].values[0]}")
+        st.write(f"선택한 식당: {selected_restaurant_name}")
         user_favorite = [selected_restaurant]
 
     next_button_1 = st.button("결과 확인", key="next_button_1")
