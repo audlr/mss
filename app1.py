@@ -47,7 +47,7 @@ if st.session_state.page_number == 2:
         st.write(f"선택한 식당: {selected_restaurant_name}")
 
     next_button_1 = st.button("결과 확인", key="next_button_1")
-    if next_button_1 and not selected_restaurant.empty:
+    if next_button_1:
         st.session_state.page_number += 1
 
 if st.session_state.page_number == 3:
