@@ -78,7 +78,7 @@ if st.session_state.page_number == 2:
     
                             m = folium.Map(location=[latitude, longitude], zoom_start=15)
                             folium.Marker([latitude, longitude], popup=f"{recommended_df['address'].iloc[i]}").add_to(m)
-                            folium_static(m, width=400, height=390)
+                            folium_static(m, width=430, height=400)
                         else:
                             st.warning(f"Location not found for {recommended_df['name'].values[i]}. Skipping map creation.")
         else:
