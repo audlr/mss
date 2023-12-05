@@ -62,7 +62,7 @@ if st.session_state.page_number == 2:
                 for i in range(5):
                     col1, col2 = st.columns(2, gap="small")
                     with col1:
-                        st.write(f"식당: {recommended_df['name'].values[i]}")
+                        st.subheader(f"{recommended_df['name'].values[i]}")
                         st.write(f"주소: {recommended_df['address'].values[i]}")
                         st.write(f"cuisines: {recommended_df['cuisines'].values[i]}")
                         review_text = recommended_df['reviews_list'].values[i]
@@ -78,7 +78,7 @@ if st.session_state.page_number == 2:
     
                             m = folium.Map(location=[latitude, longitude], zoom_start=15)
                             folium.Marker([latitude, longitude], popup=f"{recommended_df['address'].iloc[i]}").add_to(m)
-                            folium_static(m, width=400, height=350)
+                            folium_static(m, width=400, height=370)
                         else:
                             st.warning(f"Location not found for {recommended_df['name'].values[i]}. Skipping map creation.")
         else:
