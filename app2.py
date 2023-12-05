@@ -64,7 +64,7 @@ if st.session_state.page_number == 3:
     if selected_restaurant is not None:
             container2 = st.empty()
             with container2.expander(f"Recommend", expanded=True):
-                for i in range(5):
+                for i in range(8):
                     col1, col2 = st.columns(2, gap="small")
                     with col1:
                         st.subheader(f"{selected_restaurant['name'].values[i]}")
