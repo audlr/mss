@@ -45,7 +45,6 @@ if st.session_state.page_number == 2:
         selected_restaurant_name = st.selectbox("레스토랑을 선택하세요", select_restaurants)
 
         st.write(f"선택한 식당: {selected_restaurant_name}")
-        user_favorite = [selected_restaurant]
 
     next_button_1 = st.button("결과 확인", key="next_button_1")
     if next_button_1 and not selected_restaurant.empty:
